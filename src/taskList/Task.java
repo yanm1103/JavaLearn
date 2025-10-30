@@ -1,14 +1,14 @@
 package taskList;
 
 public class Task implements Comparable<Task> {
-    String name;
-    String status;
-    Integer priority;
+    String name; // TODO getter setter
+    String status; // TODO getter setter
+    Integer priority; // TODO Unused for now
 
     static Integer MAX_TASKS = 5;
 
     /**
-     * Just a test, if someday this is configurable it needs a setter
+     * TODO Just a test, if someday this is configurable it needs a setter
      * 
      * @param newMaxTasks the new max number of possible tasks
      */
@@ -18,7 +18,7 @@ public class Task implements Comparable<Task> {
 
     public Task(String name, Integer priority) {
         this.name = name;
-        this.status = "PENDING";
+        this.status = "PENDING"; // TODO Enum for statuses
         this.priority = priority;
     }
 
@@ -28,15 +28,12 @@ public class Task implements Comparable<Task> {
 
     @Override
     public int compareTo(Task o) {
-        try {
-            if (this.priority > o.priority) {
-                return 1;
-            } else if (this.priority < o.priority) {
-                return -1;
-            } else
-                return 0;
-        } catch (Exception e) {
-            throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
-        }
+        // TODO Integer.compare might do the same
+        if (this.priority > o.priority) {
+            return 1;
+        } else if (this.priority < o.priority) {
+            return -1;
+        } else
+            return 0;
     }
 }

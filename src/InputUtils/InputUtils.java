@@ -40,7 +40,7 @@ public class InputUtils {
      * @return the string input from the user
      */
     public static String getStringInput(String message) {
-        System.out.println(message);
+        System.out.print(message);
         String userInput = "";
         while (userInput.length() == 0) {
             userInput = SYSTEM_SCANNER.nextLine(); // Reading user input here
