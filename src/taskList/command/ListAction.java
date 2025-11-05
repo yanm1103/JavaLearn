@@ -1,4 +1,7 @@
-package taskList;
+package taskList.command;
+
+import taskList.Main;
+import taskList.model.Task;
 
 public class ListAction implements Command {
     @Override

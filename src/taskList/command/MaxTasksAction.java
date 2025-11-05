@@ -1,4 +1,7 @@
-package taskList;
+package taskList.command;
+
+import taskList.model.Task;
+import taskList.service.Commons;
 
 public class MaxTasksAction implements Command {
 
@@ -20,7 +23,7 @@ public class MaxTasksAction implements Command {
     }
 
     private void setMaxTasks(int newMax) {
-        System.out.printf("Número máximo de atividades alterado de %d para %d.\n", Task.MAX_TASKS, newMax);
+        System.out.printf("Número máximo de atividades alterado de %d para %d.\n", Task.getMaxTasks(), newMax);
         Task.setMaxTasks(newMax);
     }
 

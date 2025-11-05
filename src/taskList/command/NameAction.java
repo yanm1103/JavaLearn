@@ -1,6 +1,9 @@
-package taskList;
+package taskList.command;
 
 import InputUtils.InputUtils;
+import taskList.Main;
+import taskList.model.Task;
+import taskList.service.Commons;
 
 public class NameAction implements Command {
     @Override

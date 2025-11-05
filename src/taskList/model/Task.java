@@ -1,4 +1,4 @@
-package taskList;
+package taskList.model;
 
 public class Task implements Comparable<Task> {
     private String name;
@@ -38,6 +38,10 @@ public class Task implements Comparable<Task> {
      */
     public static void setMaxTasks(Integer newMaxTasks) {
         MAX_TASKS = newMaxTasks;
+    }
+
+    public static int getMaxTasks() {
+        return MAX_TASKS;
     }
 
     /**

@@ -1,4 +1,7 @@
-package taskList;
+package taskList.command;
+
+import taskList.Main;
+import taskList.service.Commons;
 
 public class RemoveAction implements Command {
     @Override

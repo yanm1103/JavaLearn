@@ -1,4 +1,4 @@
-package taskList;
+package taskList.model;
 
 public enum TaskStatus {
     PENDING("Pendente"), DONE("Concluída");

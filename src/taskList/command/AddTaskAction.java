@@ -1,4 +1,8 @@
-package taskList;
+package taskList.command;
+
+import taskList.Main;
+import taskList.model.Task;
+import taskList.service.Commons;
 
 public class AddTaskAction implements Command {
 
@@ -17,7 +21,7 @@ public class AddTaskAction implements Command {
         int total = howManyTasks(quantityStr);
         for (int i = 0; i < total; i++) {
             if (isTaskLimitReached()) {
-                System.out.printf("Número máximo de atividades atingido (%d). Remova alguma antes de adicionar novas.\n", Task.MAX_TASKS);
+                System.out.printf("Número máximo de atividades atingido (%d). Remova alguma antes de adicionar novas.\n", Task.getMaxTasks());
                 return;
             }
             System.out.println("Registrando uma nova atividade.");
@@ -38,12 +42,12 @@ public class AddTaskAction implements Command {
     private int howManyTasks(String quantityStr) {
         int tasksToCreate = 1;
         if (!quantityStr.isEmpty()) // More than one task
-            tasksToCreate = Integer.valueOf(quantityStr);
+            tasksToCreate = Integer.parseInt(quantityStr);
         return tasksToCreate;
     }
 
     private boolean isTaskLimitReached() {
-        return Main.taskList.size() >= Task.MAX_TASKS;
+        return Main.taskList.size() >= Task.getMaxTasks();
     }
 
     private Task createTask() {
@@ -53,6 +57,6 @@ public class AddTaskAction implements Command {
     }
 
     private boolean checkTaskListSize() {
-        return Main.taskList.size() < Task.MAX_TASKS;
+        return Main.taskList.size() < Task.getMaxTasks();
     }
 }

@@ -1,4 +1,4 @@
-package taskList;
+package taskList.service;
 
 /**
  * Generic methods to be used throughout the app.

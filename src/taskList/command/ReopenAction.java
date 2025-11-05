@@ -1,4 +1,9 @@
-package taskList;
+package taskList.command;
+
+import taskList.Main;
+import taskList.model.Task;
+import taskList.model.TaskStatus;
+import taskList.service.Commons;
 
 public class ReopenAction implements Command {
     @Override

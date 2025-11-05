@@ -1,4 +1,4 @@
-package taskList;
+package taskList.command;
 
 public class ExitAction implements Command {
     @Override

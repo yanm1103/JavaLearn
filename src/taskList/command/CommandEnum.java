@@ -1,4 +1,4 @@
-package taskList;
+package taskList.command;
 
 public enum CommandEnum {
     HELP(new HelpAction()), LIST(new ListAction()), ADD(new AddTaskAction()), EXIT(new ExitAction()),
