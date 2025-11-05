@@ -6,7 +6,7 @@ public class NameAction implements Command {
     @Override
     public void execute(String args) {
         try {
-            int taskIndex = Integer.parseInt(args) - 1;
+            int taskIndex = Commons.getTaskIndex(args);
             nameTask(Main.taskList.get(taskIndex));
         } catch (IndexOutOfBoundsException | NumberFormatException e) {
             System.out.println("Não foi possível renomear a tarefa. Verifique o índice informado.");
@@ -14,7 +14,7 @@ public class NameAction implements Command {
     }
 
     public void nameTask(Task task) {
-        String newName = InputUtils.getStringInput("Renomeando a atividade: ");
-        task.name = newName;
+        String newName = InputUtils.getStringInput("Novo nome da atividade: ");
+        task.setName(newName);
     }
 }

@@ -4,11 +4,11 @@ public class RemoveAction implements Command {
     @Override
     public void execute(String args) {
         if (!args.isEmpty() && Commons.checkInt(args)) {
-            int taskIndex = Integer.parseInt(args) - 1;
+            int taskIndex = Commons.getTaskIndex(args);
             removeTaskByIndex(taskIndex);
         } else {
-            System.out.println("Por favor, digite o ID da atividade que deseja remover");
-            System.out.println("(Use o comando list para verificar os IDs)");
+            System.out.println("Por favor, digite a posição da atividade que deseja remover.");
+            System.out.println("(Use o comando list para verificar as posições)");
         }
     }
 

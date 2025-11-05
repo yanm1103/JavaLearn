@@ -1,7 +1,5 @@
 package taskList;
 
-import java.util.*;
-
 public class ListAction implements Command {
     @Override
     public void execute(String args) {
@@ -14,17 +12,8 @@ public class ListAction implements Command {
             return;
         }
         for (int taskIndex = 0; taskIndex < Main.taskList.size(); taskIndex++) {
-            // TODO ordenar por prioridade
-            printTask(Main.taskList.get(taskIndex), taskIndex);
+            Task currentTask = Main.taskList.get(taskIndex);
+            currentTask.print(taskIndex);
         }
-    }
-
-    public static void printTask(Task task, int position) {
-        Map<String, String> statusMap = new HashMap<>(); // TODO enum status
-        statusMap.put("PENDING", "Pendente");
-        statusMap.put("DONE", "Concluída");
-        String shouldPrintPosition = (position == -1 ? "" : Integer.toString(position + 1)); // TODO confuso
-        System.out.println(shouldPrintPosition + ": " + task.name + " - " + statusMap.get(task.status)
-                + " - Prioridade: " + task.priority);
     }
 }

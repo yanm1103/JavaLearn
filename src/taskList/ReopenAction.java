@@ -3,13 +3,17 @@ package taskList;
 public class ReopenAction implements Command {
     @Override
     public void execute(String args) {
-        // TODO validate args
-        int taskIndex = Integer.parseInt(args) - 1;
-        reopenTask(Main.taskList.get(taskIndex)); // Change to use args to find the correct task
+        if (!args.isEmpty() && Commons.checkInt(args)) {
+            int taskIndex = Commons.getTaskIndex(args);
+            reopenTask(Main.taskList.get(taskIndex));
+        } else {
+            System.out.println("Por favor, digite a posição da atividade que deseja reabrir");
+            System.out.println("(Use o comando list para verificar as posições)");
+        }
     }
 
     private void reopenTask(Task task) {
-        task.setStatus("PENDING"); // TODO enum status
+        task.setStatus(TaskStatus.PENDING);
         System.out.println("Atividade reaberta.");
     }
 }

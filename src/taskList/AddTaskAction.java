@@ -15,12 +15,24 @@ public class AddTaskAction implements Command {
 
     private void createTasks(String quantityStr) {
         int total = howManyTasks(quantityStr);
-        System.out.println("Registrando uma nova atividade nas posições: ");
         for (int i = 0; i < total; i++) {
+            if (isTaskLimitReached()) {
+                System.out.printf("Número máximo de atividades atingido (%d). Remova alguma antes de adicionar novas.\n", Task.MAX_TASKS);
+                return;
+            }
+            System.out.println("Registrando uma nova atividade.");
             Task newTask = createTask();
             Main.taskList.add(newTask);
-            ListAction.printTask(newTask, Main.taskList.size() - 1); // TODO jogar isso no Commons ou na própria task
+            nameNewTask();
+            System.out.println("Nova atividade gerada.");
+            newTask.print(Main.taskList.size() - 1);
+            System.out.println("-------------------------------");
         }
+    }
+
+    private void nameNewTask() {
+        NameAction nameAction = new NameAction();
+        nameAction.execute(Integer.toString(Main.taskList.size()));
     }
 
     private int howManyTasks(String quantityStr) {
@@ -30,9 +42,12 @@ public class AddTaskAction implements Command {
         return tasksToCreate;
     }
 
+    private boolean isTaskLimitReached() {
+        return Main.taskList.size() >= Task.MAX_TASKS;
+    }
+
     private Task createTask() {
-        // TODO receive name and priority from user input
-        String name = "Nova atividade";
+        String name = "Nova atividade...";
         Integer priority = 1;
         return new Task(name, priority);
     }

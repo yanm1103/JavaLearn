@@ -1,15 +1,9 @@
 package taskList;
 
 public enum CommandEnum {
-    HELP(new HelpAction()),
-    LIST(new ListAction()),
-    ADD(new AddTaskAction()),
-    EXIT(new ExitAction()),
-    NAME(new NameAction()),
-    // PRIORITY(new PriorityAction()),
-    REMOVE(new RemoveAction()),
-    COMPLETE(new CompleteAction()),
-    REOPEN(new ReopenAction());
+    HELP(new HelpAction()), LIST(new ListAction()), ADD(new AddTaskAction()), EXIT(new ExitAction()),
+    NAME(new NameAction()), PRIORITY(new PriorityAction()), REMOVE(new RemoveAction()), COMPLETE(new CompleteAction()),
+    REOPEN(new ReopenAction()), MAX(new MaxTasksAction());
 
     private final Command action;
 
