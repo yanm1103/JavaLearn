@@ -12,6 +12,7 @@ public class Commons {
      * @return {@code true} or {@code false} depending on if the string can be
      *         converted or not.
      */
+    @SuppressWarnings("UnnecessaryTemporaryOnConversionFromString")
     public static boolean checkInt(String args) {
         try {
             Integer.parseInt(args);
