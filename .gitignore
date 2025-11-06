@@ -1,2 +1,4 @@
-.vscode/settings.json
-.vscode/java-formatter.xml
+.vscode/
+.gradle/
+.github/
+build/

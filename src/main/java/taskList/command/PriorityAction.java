@@ -1,6 +1,6 @@
 package taskList.command;
 
-import InputUtils.InputUtils;
+import inputUtils.InputUtils;
 import taskList.Main;
 import taskList.model.Task;
 import taskList.service.Commons;
